@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-dotenv.config();
+const mongoose = require("mongoose");
+const dotenv = require("dotenv").config();
+
 const uri = process.env.MONGODB_CONNECTION;
 
 const Dbconnection = async () => {
@@ -9,5 +9,4 @@ const Dbconnection = async () => {
     .then(() => console.log("database connected....."))
     .catch((err) => console.log(err));
 };
-
-export default Dbconnection;
+module.exports = Dbconnection;

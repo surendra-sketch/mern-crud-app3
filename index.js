@@ -1,14 +1,12 @@
-import path from "path";
-import { fileURLToPath } from "url";
-import dotenv from "dotenv";
-dotenv.config();
-import express from "express";
-import cors from "cors";
-import router from "./routes/userRoutes.js";
-import Dbconnection from "./config/DBconnection.js";
-import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const path = require("path");
+
+const dotenv = require("dotenv").config();
+
+const express = require("express");
+const cors = require("cors");
+const router = require("./routes/userRoutes");
+const Dbconnection = require("./config/Dbconnection");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 const app = express();
 app.use(cors());

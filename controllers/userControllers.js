@@ -1,5 +1,5 @@
-import asyncHandler from "express-async-handler";
-import UserModel from "../models/UserModel.js";
+const asyncHandler = require("express-async-handler");
+const UserModel = require("../models/UserModel");
 
 // @desc
 // route http://localhost:5000/api/user
@@ -94,4 +94,10 @@ const deleteUser = asyncHandler(async (req, res) => {
   res.status(202).json(user._id);
 });
 
-export { createUser, getUser, getUsers, deleteUser, updateUser };
+module.exports = {
+  createUser,
+  getUser,
+  getUsers,
+  deleteUser,
+  updateUser,
+};
